@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <!-- place your own content on the meta below -->
     <meta name="viewport" content="width=device-width">
-    <meta name="author" content="">
+    <meta name="author" content="Sabrina Frias">
     <meta name="description" content="">
     <meta name="keywords" content="">
     <title</title>
@@ -36,25 +36,28 @@
         function drawSquare() {
 
             // sample use of handlbars 
-            const s = {{sideLength}};
+            let side1 = ;
+            let side2 = ;
 
             let canvas = document.getElementById("mycanvas");
-            canvas.width = (s + 50);
-            canvas.height = (s + 50);
-            console.log(s)
+            canvas.width = (side1 + 50);
+            canvas.height = (side2 + 50);
+            
 
             var ctx = canvas.getContext("2d");
             const o = 20; //offset to have space surroundig the square
             // moving to the starting point
             ctx.moveTo(o, o);
-            ctx.lineTo(o, o + s);
-            ctx.lineTo(o + s, o + s)
-            ctx.lineTo(o + s, o);
+            ctx.lineTo(o + side1, o);
+            ctx.lineTo(o, o + side2);
             ctx.lineTo(o, o);
 
+            let line = sqrt(side1**2 + side2**2);
+
             // for placing text
-            ctx.fillText(s, o + (s / 2), o + s)
-            ctx.fillText(s, o + 0, o + s / 2) 
+            ctx.fillText(side1, o + (side1 / 2), o + side2)
+            ctx.fillText(side2, o + 0, o + side1 / 2) 
+            ctx.fillText(line, o + (side1 / 2), o + side2 / 2) 
             
             // to actually display the triangle
             ctx.stroke();
