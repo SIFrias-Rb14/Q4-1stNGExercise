@@ -20,6 +20,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Render the initial page with the number input form
 app.get("/", (req, res) => {
   res.render("index");
+  console.log("test");
+});
+
+app.get("/draw", (req, res) => {
+  const formData = req.query;
+  console.log(formData);
+  res.render("draw", {formData});
 });
 
 // Create express route binder for draw.hbs and get the data from the url as parameters
